@@ -1,10 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/product.dart';
-import '../config.dart';
 
 class ProductService {
-  final String baseUrl = ApiConfig.baseUrl;
+  static const String baseUrl = 'http://localhost:8080';
 
   Future<bool> addProduct(Product product) async {
     final response = await http.post(

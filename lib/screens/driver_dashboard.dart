@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../providers/auth_provider.dart';
-import '../config.dart';
 
 class DriverDashboard extends StatefulWidget {
   const DriverDashboard({super.key});
@@ -21,7 +20,7 @@ class _DriverDashboardState extends State<DriverDashboard> {
   void _registerTruck() async {
     final user = context.read<AuthProvider>().user!;
     final response = await http.post(
-      Uri.parse('${ApiConfig.baseUrl}/trucks'),
+      Uri.parse('http://localhost:8080/trucks'),
       body: jsonEncode({
         'driver_id': user.id,
         'truck_type': _truckTypeController.text,

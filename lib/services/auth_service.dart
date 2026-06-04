@@ -1,10 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/user.dart';
-import '../config.dart';
 
 class AuthService {
-  final String baseUrl = ApiConfig.baseUrl;
+  static const String baseUrl = 'http://localhost:8080';
 
   Future<User?> login(String username, String password) async {
     final response = await http.post(

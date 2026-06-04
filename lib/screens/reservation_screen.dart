@@ -6,7 +6,6 @@ import '../models/product.dart';
 import '../models/truck.dart';
 import '../providers/auth_provider.dart';
 import '../services/truck_service.dart';
-import '../config.dart';
 
 class ReservationScreen extends StatefulWidget {
   final Product product;
@@ -38,7 +37,7 @@ class _ReservationScreenState extends State<ReservationScreen> {
   void _reserve() async {
     final user = context.read<AuthProvider>().user!;
     final response = await http.post(
-      Uri.parse('${ApiConfig.baseUrl}/reservations'),
+      Uri.parse('http://localhost:8080/reservations'),
       body: jsonEncode({
         'buyer_id': user.id,
         'product_id': widget.product.id,

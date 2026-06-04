@@ -1,17 +1,68 @@
-# mahsool
+# محصول (Mahsool)
 
-A new Flutter project.
+سامانه رزرواسیون محصولات کشاورزی برای کشاورزان، خریداران و رانندگان کامیون.
 
-## Getting Started
+## نحوه اجرای سرور (Server)
 
-This project is a starting point for a Flutter application.
+سرور این برنامه با زبان Dart و کتابخانه Shelf نوشته شده است و از SQLite برای ذخیره داده‌ها استفاده می‌کند.
 
-A few resources to get you started if this is your first Flutter project:
+### پیش‌نیازها
+- نصب بودن [Dart SDK](https://dart.dev/get-dart)
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+### مراحل اجرا
+1. وارد پوشه `server` شوید:
+   ```bash
+   cd server
+   ```
+2. کتابخانه‌های مورد نیاز را دریافت کنید:
+   ```bash
+   dart pub get
+   ```
+3. سرور را اجرا کنید:
+   ```bash
+   dart main.dart
+   ```
+سرور به صورت پیش‌فرض روی پورت `8080` اجرا می‌شود.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## نحوه اجرای نسخه وب (Web)
+
+1. کتابخانه‌های فلاتر را دریافت کنید:
+   ```bash
+   flutter pub get
+   ```
+2. برنامه را در حالت وب اجرا کنید:
+   ```bash
+   flutter run -d chrome
+   ```
+   یا برای ساخت نسخه نهایی وب:
+   ```bash
+   flutter build web --release
+   ```
+
+## نحوه اجرای نسخه موبایل (Android/iOS)
+
+### اندروید
+برای اجرای اندروید، مطمئن شوید که شبیه‌ساز یا گوشی متصل است:
+```bash
+flutter run
+```
+برای ساخت نسخه نهایی (APK):
+```bash
+flutter build apk --release
+```
+*نکته: کلید امضای برنامه (Signing Key) در تنظیمات `build.gradle.kts` به صورت هاردکد شده قرار گرفته است.*
+
+### iOS
+برای iOS (نیاز به macOS):
+```bash
+flutter build ios --release --no-codesign
+```
+
+## قابلیت‌ها
+- ثبت نام و ورود نقش‌محور (کشاورز، خریدار، راننده، کارمند/مدیر)
+- ثبت محصول توسط کشاورز همراه با انتخاب مکان روی نقشه گوگل
+- مشاهده و رزرو محصولات توسط خریدار
+- انتخاب راننده کامیون برای حمل محصولات
+- پنل مدیریت برای نظارت بر تراکنش‌ها
+- پشتیبانی کامل از زبان فارسی و راست‌چین (RTL)
+- طراحی مدرن با Material 3

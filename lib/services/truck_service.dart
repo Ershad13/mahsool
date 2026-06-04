@@ -1,10 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/truck.dart';
-import '../config.dart';
 
 class TruckService {
-  final String baseUrl = ApiConfig.baseUrl;
+  static const String baseUrl = 'http://localhost:8080';
 
   Future<List<Truck>> getAvailableTrucks() async {
     final response = await http.get(Uri.parse('$baseUrl/trucks'));
