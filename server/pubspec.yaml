@@ -1,0 +1,19 @@
+name: mahsool_server
+description: A server for Mahsool app.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  shelf: ^1.4.1
+  shelf_router: ^1.1.4
+  sqlite3: ^2.1.0
+  crypto: ^3.0.3
+  json_annotation: ^4.8.1
+
+dev_dependencies:
+  lints: ^3.0.0
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
