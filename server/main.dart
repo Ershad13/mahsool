@@ -149,7 +149,24 @@ class ApiServer {
   }
 
   Future<Response> _getTrucksHandler(Request request) async {
-    final results = dbHelper.db.select('SELECT * FROM trucks WHERE is_available = 1');
+    final province = request.url.queryParameters['province'];
+    final city = request.url.queryParameters['city'];
+
+    String query = 'SELECT * FROM trucks WHERE is_available = 1';
+    List<dynamic> params = [];
+
+    if (province != null || city != null) {
+      if (province != null) {
+        query += ' AND province = ?';
+        params.add(province);
+      }
+      if (city != null) {
+        query += ' AND city = ?';
+        params.add(city);
+      }
+    }
+
+    final results = dbHelper.db.select(query, params);
     return Response.ok(jsonEncode(results.map((r) => Map<String, dynamic>.from(r)).toList()));
   }
 

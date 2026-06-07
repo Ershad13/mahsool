@@ -28,7 +28,11 @@ class _ReservationScreenState extends State<ReservationScreen> {
   }
 
   void _loadTrucks() async {
-    final trucks = await _truckService.getAvailableTrucks();
+    // Filter trucks based on product location
+    final trucks = await _truckService.getAvailableTrucks(
+      province: widget.product.province,
+      city: widget.product.city,
+    );
     setState(() {
       _trucks = trucks;
     });
