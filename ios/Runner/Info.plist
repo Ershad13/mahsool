@@ -66,5 +66,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>این برنامه برای تعیین محل محصولات و یافتن رانندگان به دسترسی به مکان نیاز دارد.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>این برنامه برای تعیین محل محصولات و یافتن رانندگان به دسترسی به مکان نیاز دارد.</string>
 </dict>
 </plist>
