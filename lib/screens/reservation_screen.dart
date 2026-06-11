@@ -74,7 +74,7 @@ class _ReservationScreenState extends State<ReservationScreen> {
                 itemBuilder: (context, index) {
                   final truck = _trucks[index];
                   return RadioListTile<Truck>(
-                    title: Text('${truck.truck_type} - ظرفیت: ${truck.capacity}'),
+                    title: Text('${truck.truckType} - ظرفیت: ${truck.capacity}'),
                     subtitle: Text('استان: ${truck.province}، شهر: ${truck.city}'),
                     value: truck,
                     groupValue: _selectedTruck,
